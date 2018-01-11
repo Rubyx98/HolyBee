@@ -24,7 +24,6 @@ namespace HolyBee
                 try
                 {
                     var context = services.GetRequiredService<DatabaseContext>();
-                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {

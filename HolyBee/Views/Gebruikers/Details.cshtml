@@ -1,0 +1,42 @@
+﻿@model HolyBee.Models.Gebruiker
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Gebruiker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Gebruikersnaam)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gebruikersnaam)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Wachtwoord)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Wachtwoord)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefoonNummer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TelefoonNummer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.GebruikerID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
