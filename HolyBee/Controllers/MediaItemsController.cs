@@ -22,7 +22,7 @@ namespace HolyBee.Controllers
         // GET: MediaItems
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Courses.ToListAsync());
+            return View(await _context.Media.ToListAsync());
         }
 
         // GET: MediaItems/Details/5
@@ -33,7 +33,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var mediaItem = await _context.Courses
+            var mediaItem = await _context.Media
                 .SingleOrDefaultAsync(m => m.MediaItemID == id);
             if (mediaItem == null)
             {
@@ -73,7 +73,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var mediaItem = await _context.Courses.SingleOrDefaultAsync(m => m.MediaItemID == id);
+            var mediaItem = await _context.Media.SingleOrDefaultAsync(m => m.MediaItemID == id);
             if (mediaItem == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var mediaItem = await _context.Courses
+            var mediaItem = await _context.Media
                 .SingleOrDefaultAsync(m => m.MediaItemID == id);
             if (mediaItem == null)
             {
@@ -139,15 +139,15 @@ namespace HolyBee.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var mediaItem = await _context.Courses.SingleOrDefaultAsync(m => m.MediaItemID == id);
-            _context.Courses.Remove(mediaItem);
+            var mediaItem = await _context.Media.SingleOrDefaultAsync(m => m.MediaItemID == id);
+            _context.Media.Remove(mediaItem);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MediaItemExists(int id)
         {
-            return _context.Courses.Any(e => e.MediaItemID == id);
+            return _context.Media.Any(e => e.MediaItemID == id);
         }
     }
 }
