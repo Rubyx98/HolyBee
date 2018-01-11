@@ -8,5 +8,7 @@ namespace HolyBee.Models
     public class MediaItem
     {
         public int MediaItemID { get; set; }
+        public string Name { get; set; }
+
     }
 }
