@@ -7,6 +7,10 @@ namespace HolyBee.Models
 {
     public class Gebruiker
     {
-        public string GebruikerID { get; set; }
+        public int GebruikerID { get; set; }
+        public string Gebruikersnaam { get; set; }
+        public string Wachtwoord { get; set; }
+        public string Email { get; set; }
+        public int TelefoonNummer { get; set; }
     }
 }
