@@ -22,7 +22,7 @@ namespace HolyBee.Controllers
         // GET: MediaItems
         public async Task<IActionResult> Index()
         {
-            return View(await _context.MediaItem.ToListAsync());
+            return View(await _context.Media.ToListAsync());
         }
 
         // GET: MediaItems/Details/5
@@ -33,7 +33,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var mediaItem = await _context.MediaItem
+            var mediaItem = await _context.Media
                 .SingleOrDefaultAsync(m => m.MediaItemID == id);
             if (mediaItem == null)
             {
@@ -54,7 +54,7 @@ namespace HolyBee.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MediaItemID,Name")] MediaItem mediaItem)
+        public async Task<IActionResult> Create([Bind("MediaItemID")] MediaItem mediaItem)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var mediaItem = await _context.MediaItem.SingleOrDefaultAsync(m => m.MediaItemID == id);
+            var mediaItem = await _context.Media.SingleOrDefaultAsync(m => m.MediaItemID == id);
             if (mediaItem == null)
             {
                 return NotFound();
@@ -86,7 +86,7 @@ namespace HolyBee.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MediaItemID,Name")] MediaItem mediaItem)
+        public async Task<IActionResult> Edit(int id, [Bind("MediaItemID")] MediaItem mediaItem)
         {
             if (id != mediaItem.MediaItemID)
             {
@@ -124,7 +124,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var mediaItem = await _context.MediaItem
+            var mediaItem = await _context.Media
                 .SingleOrDefaultAsync(m => m.MediaItemID == id);
             if (mediaItem == null)
             {
@@ -139,15 +139,15 @@ namespace HolyBee.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var mediaItem = await _context.MediaItem.SingleOrDefaultAsync(m => m.MediaItemID == id);
-            _context.MediaItem.Remove(mediaItem);
+            var mediaItem = await _context.Media.SingleOrDefaultAsync(m => m.MediaItemID == id);
+            _context.Media.Remove(mediaItem);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MediaItemExists(int id)
         {
-            return _context.MediaItem.Any(e => e.MediaItemID == id);
+            return _context.Media.Any(e => e.MediaItemID == id);
         }
     }
 }
