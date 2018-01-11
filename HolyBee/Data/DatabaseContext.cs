@@ -14,10 +14,12 @@ namespace HolyBee.Data
         }
 
         public DbSet<MediaItem> Courses { get; set; }
+        public DbSet<Gebruiker> Gebruikers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MediaItem>().ToTable("MediaItem");
+            modelBuilder.Entity<Gebruiker>().ToTable("Gebruiker");
         }
     }
 }
