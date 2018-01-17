@@ -22,7 +22,7 @@ namespace HolyBee.Controllers
         // GET: Gebruikers
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Gebruiker.ToListAsync());
+            return View(await _context.Gebruikers.ToListAsync());
         }
 
         // GET: Gebruikers/Details/5
@@ -33,7 +33,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var gebruiker = await _context.Gebruiker
+            var gebruiker = await _context.Gebruikers
                 .SingleOrDefaultAsync(m => m.GebruikerID == id);
             if (gebruiker == null)
             {
@@ -73,7 +73,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var gebruiker = await _context.Gebruiker.SingleOrDefaultAsync(m => m.GebruikerID == id);
+            var gebruiker = await _context.Gebruikers.SingleOrDefaultAsync(m => m.GebruikerID == id);
             if (gebruiker == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace HolyBee.Controllers
                 return NotFound();
             }
 
-            var gebruiker = await _context.Gebruiker
+            var gebruiker = await _context.Gebruikers
                 .SingleOrDefaultAsync(m => m.GebruikerID == id);
             if (gebruiker == null)
             {
@@ -139,15 +139,15 @@ namespace HolyBee.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var gebruiker = await _context.Gebruiker.SingleOrDefaultAsync(m => m.GebruikerID == id);
-            _context.Gebruiker.Remove(gebruiker);
+            var gebruiker = await _context.Gebruikers.SingleOrDefaultAsync(m => m.GebruikerID == id);
+            _context.Gebruikers.Remove(gebruiker);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool GebruikerExists(int id)
         {
-            return _context.Gebruiker.Any(e => e.GebruikerID == id);
+            return _context.Gebruikers.Any(e => e.GebruikerID == id);
         }
     }
 }
