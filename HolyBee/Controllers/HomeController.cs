@@ -21,6 +21,13 @@ namespace HolyBee.Controllers
 
             return View();
         }
+        public IActionResult Gallerij()
+        {
+            ViewData["Message"] = "Your gallery.";
+
+            return View();
+        }
+
 
         public IActionResult Contact()
         {

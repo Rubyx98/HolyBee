@@ -13,8 +13,8 @@ namespace HolyBee.Data
         {
         }
 
-        public DbSet<MediaItem> Media { get; set; }
-        public DbSet<Gebruiker> Gebruiker { get; set; }
+        public DbSet<MediaItem> MediaItem { get; set; }
+        public DbSet<Gebruiker> Gebruikers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
