@@ -1,20 +1,26 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    color: white;
     background-image: url(https://rabbisremembering.files.wordpress.com/2015/06/falling_star-night_sky_hd_wallpaper_1920x1080.jpg)
 }
+
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+
 }
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
     line-height: 1.4;
 }
+
+
 
 .col-md-4 {
     color: white;
@@ -24,10 +30,7 @@
     color: white;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
+
 
 /* QR code generator */
 #qrCode {
@@ -68,6 +71,7 @@ html, body {
     height: 910px;
     background: #234;
     overflow: hidden;
+
 }
 
 .moon {
